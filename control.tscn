@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d0pfxitcwmgnp"]
+
+[ext_resource type="Shader" uid="uid://42tpqveifc2p" path="res://new_shader.gdshader" id="1_62e2m"]
+[ext_resource type="Script" uid="uid://bucubxasjq0ij" path="res://FractalRenderer.cs" id="2_qtu10"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ee4bf"]
+shader = ExtResource("1_62e2m")
+shader_parameter/zoom = 1.5
+shader_parameter/max_iterations = 1000
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/pan_float = Vector2(0, 0)
+
+[node name="Control" type="Control" unique_id=964204479]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FractalRenderer" type="ColorRect" parent="." unique_id=473681172]
+material = SubResource("ShaderMaterial_ee4bf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_qtu10")
